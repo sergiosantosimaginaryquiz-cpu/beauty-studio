@@ -1,6 +1,6 @@
 # Beauty Studio Cátia Gonçalves — static web app
 
-Plain **HTML + CSS + JavaScript** (ES modules). No build step, no frameworks, no `npm install` — upload the folder to GitHub and turn on GitHub Pages.
+Plain **HTML + CSS + JavaScript** — every file sits in one folder (no subfolders), so you can select all files on GitHub's upload page in one go.
 
 - **Public site**: `index.html`, `trabalhos.html`, `marcacao.html`
 - **Admin panel**: `admin.html` (login with Supabase Auth)
@@ -30,7 +30,7 @@ Until Supabase is configured, the site runs in **demo mode** with sample data (a
 ## 2. Connect the real database (Supabase)
 
 1. Create a free project at supabase.com (region: *West EU*).
-2. **SQL Editor** → paste and run `supabase/01_schema.sql`, then `supabase/02_seed.sql`.
+2. **SQL Editor** → paste and run `01_schema.sql`, then `02_seed.sql`.
 3. **Authentication → Users → Add user** → Cátia's email + password (tick *Auto confirm user*).
 4. Make her an admin (SQL Editor):
    ```sql
@@ -39,7 +39,7 @@ Until Supabase is configured, the site runs in **demo mode** with sample data (a
    ```
 5. **Authentication → Sign In / Providers → Email**: turn **off** "Allow new users to sign up".
 6. **Authentication → URL Configuration**: set *Site URL* to your GitHub Pages address (needed for password-reset emails).
-7. Open `assets/js/config.js` and paste the two values from **Project Settings → API**:
+7. Open `config.js` and paste the two values from **Project Settings → API**:
    ```js
    export const SUPABASE_URL = "https://xxxx.supabase.co";
    export const SUPABASE_ANON_KEY = "eyJ…";
@@ -72,7 +72,7 @@ assets/
   js/admin.js  admin-ui.js  admin-views1/2/3.js         admin app (hash routes)
   fonts/            self-hosted Manrope + Cormorant Garamond (OFL)
   img/              favicon + social share image
-supabase/01_schema.sql  02_seed.sql
+01_schema.sql  02_seed.sql
 ```
 
 ## How the important parts work
