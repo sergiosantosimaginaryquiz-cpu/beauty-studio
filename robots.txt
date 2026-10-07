@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+
+# Substitua pelo seu domínio:
+Sitemap: https://SEU-DOMINIO/sitemap.xml
